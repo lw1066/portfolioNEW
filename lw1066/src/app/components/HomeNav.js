@@ -4,10 +4,8 @@ import Link from "next/link";
 export default function HomeNav () {
 
     return (
-        <Link href='/' className={`${styles.description} ${styles.topLeft}`}>
-        <p>
-            Head Home!
-        </p>        
+        <Link href='/' className={styles.topLeft}>
+        Home     
         </Link>
     )
 }

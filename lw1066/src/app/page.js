@@ -53,14 +53,14 @@ export default function Home() {
         </Link>
 
         <Link
-          href="/"
+          href="/perceptia"
           className={styles.card}
         >
           <h2>
             Perceptia<br/>Press <span>-&gt;</span>
           </h2>
           <p>
-          <b>Coming Soon!</b><br/>Serverless Nextjs site using a NoSQL db and Firebase Auth.
+          Serverless Nextjs site using a NoSQL db and Firebase Auth.
           </p>
         </Link>
       </div>
