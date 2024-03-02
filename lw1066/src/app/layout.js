@@ -8,7 +8,7 @@ export const metadata = {
   title: "lw1066",
   description: "A little bit about me.",
   icons: {
-    icon: "android-chrome-192x192.png"
+    icon: "/favicon-32x32.png"
   }
 };
 
