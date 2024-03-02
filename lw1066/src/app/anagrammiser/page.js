@@ -1,18 +1,12 @@
-import React from "react";
-import Head from 'next/head';
-// import { Helmet } from "react-helmet";
-import App from "./App"; // Path to your App component
+import React from 'react';
 
-export default function AnagramAppPage() {
+function ReactAppPage() {
   return (
     <div>
-      <Head>
-        <meta charSet="utf-8" />
-        <title>Anagrammiser</title>
-        <link rel="canonical" href="http://anagrammiser.netlify.app" />
-        <meta name="description" content="Anagram solver" />
-      </Head>
-      <App />
+      <iframe src="/index.html" style={{ width: '100%', height: '100vh', border: 'none' }} />
     </div>
   );
 }
+
+export default ReactAppPage;
+
