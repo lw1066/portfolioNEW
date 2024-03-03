@@ -6,6 +6,26 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <div id={styles.detailsCard}>
+        <h1>Lewis Webster</h1>
+        <h2>Junior Developer</h2>
+        <div id={styles.contactImagesContainer}>
+          <a>
+            <img className={styles.contactImage} src='/icons8-email-open-50.png' />
+          </a>
+          <span>
+          <Link href='/'>
+            <img className={styles.contactImage} src='/icons8-ringing-phone-50.png' />
+          </Link>
+          </span>
+          <a href='https://linkedin.com/in/lewis-webster-lw1066' target="_blank" rel="noopener noreferrer" ></a>
+            <img className={styles.contactImage} src='/icons8-linkedin-50.svg' />
+          <a/>
+          <a href='https://github.com/lw1066' target="_blank" rel="noopener noreferrer" >
+           <img className={styles.contactImage} src='/icons8-github-50.png' />
+          </a>
+        </div>
+      </div>
      
       <div className={`${styles.center} ${styles.circularImageContainer}`}>
         <div className={`${styles.circularImage}`}>
@@ -18,7 +38,10 @@ export default function Home() {
             priority
           />
         </div>
-       
+      </div>
+
+      <div>
+        <h2>Projects</h2>
       </div>
 
       <div className={styles.grid}>
