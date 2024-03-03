@@ -10,18 +10,20 @@ export default function Home() {
         <h1>Lewis Webster</h1>
         <h2>Junior Developer</h2>
         <div id={styles.contactImagesContainer}>
-          <a>
+          <a href='mailto:lewis_websbster@hotmail.com' alt='email address'>
             <img className={styles.contactImage} src='/icons8-email-open-50.png' />
+            <span className={styles.contactText}>lewis_webster@hotmail.com<br/>Click to go to your email</span>
           </a>
           <span>
           <Link href='/'>
             <img className={styles.contactImage} src='/icons8-ringing-phone-50.png' />
+            <span className={styles.contactText}>Call me on<br/>0750 000 3912</span>
           </Link>
           </span>
-          <a href='https://linkedin.com/in/lewis-webster-lw1066' target="_blank" rel="noopener noreferrer" ></a>
+          <a href='https://www.linkedin.com/in/lewis-webster-lw1066/' target="_blank" rel="noopener noreferrer" alt='linkedin link'>
             <img className={styles.contactImage} src='/icons8-linkedin-50.svg' />
-          <a/>
-          <a href='https://github.com/lw1066' target="_blank" rel="noopener noreferrer" >
+          </a>
+          <a href='https://github.com/lw1066' target="_blank" rel="noopener noreferrer" alt='github link' >
            <img className={styles.contactImage} src='/icons8-github-50.png' />
           </a>
         </div>
@@ -50,9 +52,9 @@ export default function Home() {
           className={styles.card}
         >
           <h2>
-            The<br/>Anagrammiser <span>-&gt;</span>
+            The<br/>Ana-gram-miser <span>-&gt;</span>
           </h2>
-          <p>Single page React app using a couple of dictionary APIs.</p>
+          <p>React SPA using a dictionary API.</p>
         </Link>
 
         <Link

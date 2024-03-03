@@ -34,8 +34,9 @@
 .circularImage {
   border-radius: 50%;
   overflow: hidden;
-  width: 180px; /* Adjust as needed */
-  height: 180px; /* Adjust as needed */
+  width: 180px; 
+  height: 180px; 
+  box-shadow: 0 0 30px rgba(2, 152, 207, 0.4);
 }
 
 .logo {
@@ -86,6 +87,10 @@
   border-radius: 50%;
 }
 
+.topLeft:hover {
+  border: 1px solid white;
+}
+
 #detailsCard {
   text-align: center;
 }
@@ -101,6 +106,33 @@
 .contactImage {
   width: 25px;
   margin: .5rem;
+  position: relative;
+}
+.contactImage:hover {
+  transform: scale(1.1);
+}
+
+.contactText {
+  visibility: hidden;
+  width: 250px;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid rgb(131, 134, 135);
+  padding: 5px 0;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contactImage:hover + .contactText {
+  visibility: visible;
+  opacity: 1;
 }
 
 
@@ -155,33 +187,6 @@
   .card h2 {
     margin-bottom: 0.5rem;
   }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  /* .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 15%;
-   
-  }   */
-  
-  /* .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
-  } */
 }
 
 /* Tablet and Smaller Desktop */
@@ -194,8 +199,3 @@
   
 }
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-}
