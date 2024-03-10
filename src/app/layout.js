@@ -5,20 +5,20 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "lw1066",
+  title: "Lewis Webster",
   description: "A little bit about me.",
   icons: {
-    icon: "/favicon-32x32.png"
-  }
+    icon: "/favicon-32x32.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <HomeNav/>
+        <HomeNav />
         {children}
-        </body>
+      </body>
     </html>
   );
 }
