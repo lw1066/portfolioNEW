@@ -31,7 +31,7 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
   return (
     <div className="circle" style={{ width: circleSize, height: circleSize }}>
       <div className="content">
-        <h3>
+        <h3 style={{ display: isVisibleCuckmere ? "block" : "none" }}>
           The Sussex Downs give good green. Cuckmere Valley is my highlight
         </h3>
       </div>

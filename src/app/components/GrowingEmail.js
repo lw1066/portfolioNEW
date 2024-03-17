@@ -21,7 +21,12 @@ const GrowingLine = ({ isVisibleEmail }) => {
       style={{ height: `${lineHeight}px` }}
     >
       <div className="content">
-        <h3 className="text">Lewis_webster@hotmail.com</h3>
+        <h3
+          className="text"
+          style={{ display: isVisibleEmail ? "block" : "none" }}
+        >
+          Lewis_webster@hotmail.com
+        </h3>
       </div>
       <style jsx>{`
         .line {

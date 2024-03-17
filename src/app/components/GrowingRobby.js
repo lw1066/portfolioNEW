@@ -34,7 +34,7 @@ const GrowingRobby = ({ isVisibleRobby }) => {
       style={{ width: circleSize, height: circleSize }}
     >
       <div className="content">
-        <p>
+        <p style={{ display: isVisibleRobby ? "block" : "none" }}>
           Started coding in 2022, in 2023 spent 2 days a week studying online.
           At the start of 2024 took a full-time bootcamp @Northcoders. My skills
           are growing - take a look at some projects. (Oh and yep, that's Robby

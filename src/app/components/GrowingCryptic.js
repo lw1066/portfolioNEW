@@ -31,7 +31,7 @@ const GrowingCryptic = ({ isVisibleCryptic }) => {
   return (
     <div className={"circle"} style={{ width: circleSize, height: circleSize }}>
       <div className="content">
-        <h3>
+        <h3 style={{ display: isVisibleCryptic ? "block" : "none" }}>
           "__________ are great!"&emsp;{" "}
           <i>Weep quietly over short parasite starting to suck (8)</i>{" "}
         </h3>

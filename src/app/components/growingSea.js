@@ -32,7 +32,10 @@ const GrowingSea = ({ isVisibleSea }) => {
       className={`circle `}
       style={{ width: circleSize, height: circleSize }}
     >
-      <div className="content">
+      <div
+        className="content"
+        style={{ display: isVisibleSea ? "block" : "none" }}
+      >
         <h3>Sea swimming is a particular joy</h3>
         <h3>The water provides perspective </h3>
         <h3>The repetition is meditative</h3>

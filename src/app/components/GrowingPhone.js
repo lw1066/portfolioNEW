@@ -2,7 +2,9 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
   return (
     <div className={`textbox ${isVisible ? "slide-in" : ""}`}>
       <div className="content">
-        <h3>Call 0750 000 3912</h3>
+        <h3 style={{ display: isVisible ? "block" : "none" }}>
+          Call 0750 000 3912
+        </h3>
       </div>
       <style jsx>{`
         .textbox {

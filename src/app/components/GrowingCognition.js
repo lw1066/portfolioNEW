@@ -33,7 +33,10 @@ const GrowingCognition = ({ isVisibleCognition }) => {
       style={{ width: circleSize, height: circleSize }}
     >
       <div className="content">
-        <p className="text">
+        <p
+          className="text"
+          style={{ display: isVisibleCognition ? "block" : "none" }}
+        >
           Cognitive Linguistics is an area I find exciting. The relation between
           language, mind and self holds endless fascination
         </p>
