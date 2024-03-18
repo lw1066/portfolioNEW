@@ -40,13 +40,13 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
           position: absolute;
           bottom: -50px;
           left: -200px;
+          z-index: 800;
 
           background-color: #57bbbc;
           overflow: hidden;
           transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1),
             height 2.5s cubic-bezier(0.4, 0, 0.2, 1),
             left 2.5s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 999;
           display: flex;
           align-items: center;
           justify-content: center;
