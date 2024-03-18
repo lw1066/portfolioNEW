@@ -5,7 +5,7 @@ const GrowingLine = ({ isVisibleEmail }) => {
 
   useEffect(() => {
     if (isVisibleEmail) {
-      const lineHeight = 130;
+      const lineHeight = 300;
       setLineHeight(lineHeight);
     } else {
       setLineHeight(0);
