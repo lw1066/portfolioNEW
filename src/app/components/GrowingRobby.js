@@ -35,10 +35,9 @@ const GrowingRobby = ({ isVisibleRobby }) => {
     >
       <div className="content">
         <p style={{ display: isVisibleRobby ? "block" : "none" }}>
-          Started coding in 2022, in 2023 spent 2 days a week studying online.
-          At the start of 2024 took a full-time bootcamp @Northcoders. My skills
-          are growing - take a look at some projects. (Oh and yep, that's Robby
-          the robot - legend!)
+          2022: began cooding 2023: 2 days a week online study 2024 full-time
+          bootcamp @Northcoders. My skills are growing. (Oh and yep - Robby the
+          robot, legend!)
         </p>
       </div>
       <style jsx>{`
@@ -61,14 +60,14 @@ const GrowingRobby = ({ isVisibleRobby }) => {
         .content {
           padding: 1rem;
           color: black;
-          font-size: 0.75rem;
+          font-size: 0.9rem;
           text-align: center;
           font-weight: bold;
         }
 
         @media (min-width: 701px) and (max-width: 1120px) {
           .content {
-            font-size: 0.55rem;
+            font-size: 0.7rem;
           }
 
           .circle {
@@ -79,7 +78,7 @@ const GrowingRobby = ({ isVisibleRobby }) => {
 
         @media (max-width: 700px) {
           .content {
-            font-size: 0.4rem;
+            font-size: 0.5rem;
           }
 
           .circle {
