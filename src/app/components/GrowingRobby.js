@@ -35,9 +35,9 @@ const GrowingRobby = ({ isVisibleRobby }) => {
     >
       <div className="content">
         <p style={{ display: isVisibleRobby ? "block" : "none" }}>
-          2022: began cooding 2023: 2 days a week online study 2024 full-time
-          bootcamp @Northcoders. My skills are growing. (Oh and yep - Robby the
-          robot, legend!)
+          2022: began coding. 2023: 2 days a week online study. 2024: full-time
+          bootcamp @Northcoders. My skills are growing. (Oh yep that's Robby the
+          robot - legend!)
         </p>
       </div>
       <style jsx>{`

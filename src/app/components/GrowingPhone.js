@@ -12,8 +12,8 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
           top: 150px;
           left: -100%;
           transform: translateX(0);
-          height: 50px;
-          width: 44%;
+          height: 40px;
+          width: 39%;
           background-color: blue;
           overflow: hidden;
           transition: left 2.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -35,7 +35,7 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
 
         @media (min-width: 701px) and (max-width: 1120px) {
           .textbox {
-            width: 50%;
+            width: 40%;
             height: 3.5vw;
           }
 
@@ -47,11 +47,11 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
         @media (max-width: 700px) {
           .textbox {
             width: 55%;
-            height: 4.5vw;
+            height: 25px;
           }
 
           .content {
-            font-size: 2vw;
+            font-size: 10px;
           }
         }
       `}</style>

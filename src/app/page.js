@@ -165,11 +165,10 @@ export default function Home() {
         <div id={styles.cogRob}></div>
 
         <div ref={projectsRef} id={styles.gridContainer}>
-          <h2>
-            Some work that reflects progress made.
+          <h2 id={styles.projectText}>
+            Projects that reflect progress made.
             <br />
-            Still a long way to go but a good start.
-            <br />I hope you agree...
+            Still a long way to go but a good start...
           </h2>
 
           <div className={styles.grid}>
