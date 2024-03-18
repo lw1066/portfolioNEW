@@ -8,11 +8,11 @@ const GrowingRobby = ({ isVisibleRobby }) => {
       const { innerWidth, innerHeight } = window;
 
       if (innerHeight < 500 || innerWidth < 700) {
-        setCircleSize(86);
+        setCircleSize(115);
       } else if (innerWidth >= 701 && innerWidth <= 1120) {
-        setCircleSize(145);
+        setCircleSize(160);
       } else {
-        setCircleSize(210);
+        setCircleSize(230);
       }
     };
 
@@ -68,23 +68,23 @@ const GrowingRobby = ({ isVisibleRobby }) => {
 
         @media (min-width: 701px) and (max-width: 1120px) {
           .content {
-            font-size: 0.5rem;
+            font-size: 0.55rem;
           }
 
           .circle {
-            bottom: -20px;
+            bottom: -90px;
             left: -215px;
           }
         }
 
         @media (max-width: 700px) {
           .content {
-            font-size: 0.3rem;
+            font-size: 0.4rem;
           }
 
           .circle {
-            bottom: -58px;
-            left: -64px;
+            bottom: -68px;
+            left: -94px;
           }
         }
       `}</style>

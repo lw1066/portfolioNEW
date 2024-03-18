@@ -9,11 +9,11 @@ const GrowingSea = ({ isVisibleSea }) => {
         const { innerWidth, innerHeight } = window;
 
         if (innerHeight < 500 || innerWidth < 700) {
-          setCircleSize(70);
+          setCircleSize(100);
         } else if (innerWidth >= 701 && innerWidth <= 1120) {
-          setCircleSize(120);
+          setCircleSize(140);
         } else {
-          setCircleSize(175);
+          setCircleSize(195);
         }
       };
       calculateCircleSize();
@@ -66,7 +66,7 @@ const GrowingSea = ({ isVisibleSea }) => {
 
         @media (min-width: 701px) and (max-width: 1120px) {
           .content {
-            font-size: 0.5rem;
+            font-size: 0.6rem;
           }
 
           .circle {
@@ -76,7 +76,7 @@ const GrowingSea = ({ isVisibleSea }) => {
 
         @media (max-width: 700px) {
           .content {
-            font-size: 0.25rem;
+            font-size: 0.45rem;
           }
 
           .circle {

@@ -32,7 +32,7 @@ const GrowingLine = ({ isVisibleEmail }) => {
         .line {
           position: fixed;
           top: -5px;
-          left: 15%;
+          left: 10%;
           width: 25px;
           background-color: yellow;
           display: flex;

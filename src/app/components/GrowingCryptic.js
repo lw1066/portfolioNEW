@@ -56,19 +56,19 @@ const GrowingCryptic = ({ isVisibleCryptic }) => {
         .content {
           padding: 1rem;
           color: black;
-          font-size: 0.75rem;
+          font-size: 0.9rem;
           text-align: center;
         }
 
         @media (min-width: 701px) and (max-width: 1120px) {
           .content {
-            font-size: 0.5rem;
+            font-size: 0.6rem;
           }
         }
 
         @media (max-width: 700px) {
           .content {
-            font-size: 0.35rem;
+            font-size: 0.45rem;
           }
 
           .circle {

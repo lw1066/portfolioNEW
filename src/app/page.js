@@ -193,15 +193,14 @@ export default function Home() {
               </p>
             </Link>
 
-            <Link href="/" className={styles.card}>
+            <Link href="/thoughts" className={styles.card}>
               <h2>
-                News site
-                <br /> demo <span>-&gt;</span>
+                The Thoughts of Others
+                <br /> <span>-&gt;</span>
               </h2>
               <p>
-                <b>Coming Soon!</b>
-                <br />
-                React front with a node.js backend and PSQL db.
+                Mobile first full-stack news/blog app. React front with a
+                node.js/PSQL back.
               </p>
             </Link>
 

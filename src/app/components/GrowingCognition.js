@@ -8,11 +8,11 @@ const GrowingCognition = ({ isVisibleCognition }) => {
       const calculateCircleSize = () => {
         const { innerWidth, innerHeight } = window;
         if (innerHeight < 500 || innerWidth < 700) {
-          setCircleSize(90);
+          setCircleSize(110);
         } else if (innerWidth >= 701 && innerWidth <= 1120) {
-          setCircleSize(120);
+          setCircleSize(140);
         } else {
-          setCircleSize(160);
+          setCircleSize(195);
         }
       };
 
@@ -68,7 +68,7 @@ const GrowingCognition = ({ isVisibleCognition }) => {
 
         @media (min-width: 701px) and (max-width: 1120px) {
           .content {
-            font-size: 0.5rem;
+            font-size: 0.7rem;
           }
 
           .circle {
@@ -79,7 +79,7 @@ const GrowingCognition = ({ isVisibleCognition }) => {
 
         @media (max-width: 700px) {
           .content {
-            font-size: 0.35rem;
+            font-size: 0.5rem;
           }
 
           .circle {

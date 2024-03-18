@@ -8,11 +8,11 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
       const { innerWidth, innerHeight } = window;
 
       if (innerHeight < 500 || innerWidth < 700) {
-        setCircleSize(80);
+        setCircleSize(100);
       } else if (innerWidth >= 701 && innerWidth <= 1120) {
-        setCircleSize(120);
+        setCircleSize(140);
       } else {
-        setCircleSize(175);
+        setCircleSize(195);
       }
     };
 
@@ -38,8 +38,8 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
       <style jsx>{`
         .circle {
           position: absolute;
-          bottom: 0px;
-          left: -80px;
+          bottom: -50px;
+          left: -200px;
 
           background-color: #57bbbc;
           overflow: hidden;
@@ -63,21 +63,21 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
 
         @media (min-width: 701px) and (max-width: 1120px) {
           .content {
-            font-size: 0.5rem;
+            font-size: 0.7rem;
           }
           .circle {
-            top: 10px;
-            left: -50px;
+            top: -200px;
+            left: -80px;
           }
         }
 
         @media (max-width: 700px) {
           .content {
-            font-size: 0.3rem;
+            font-size: 0.5rem;
           }
           .circle {
-            top: 50px;
-            left: 10px;
+            top: -40px;
+            left: -60px;
           }
         }
       `}</style>
