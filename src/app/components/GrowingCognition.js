@@ -37,8 +37,8 @@ const GrowingCognition = ({ isVisibleCognition }) => {
           className="text"
           style={{ display: isVisibleCognition ? "block" : "none" }}
         >
-          Cognitive Linguistics is an area I find exciting. The relation between
-          language, mind and self holds endless fascination
+          The relation between language, mind and self is fascinating -
+          Cognitive Linguistics explores this
         </p>
       </div>
       <style jsx>{`
@@ -46,7 +46,7 @@ const GrowingCognition = ({ isVisibleCognition }) => {
           position: absolute;
           bottom: -80px;
           right: -100px;
-          background-color: #b6818b;
+          // background-color: #b6818b;
           overflow: hidden;
           transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1),
             height 2.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -55,12 +55,15 @@ const GrowingCognition = ({ isVisibleCognition }) => {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          border: 1px solid grey;
+          // border: 1px solid grey;
+          font-size: 12px;
+          background-color: rgba(var(--callout-rgb), 0.5);
+          border: 1px solid rgba(var(--callout-border-rgb), 0.3);
         }
 
         .content {
           padding: 1rem;
-          color: black;
+          color: white;
           font-size: 0.75rem;
           text-align: center;
           font-weight: bold;

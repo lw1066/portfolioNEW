@@ -32,7 +32,7 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
     <div className="circle" style={{ width: circleSize, height: circleSize }}>
       <div className="content">
         <h3 style={{ display: isVisibleCuckmere ? "block" : "none" }}>
-          The Sussex Downs give good green. Cuckmere Valley is my highlight
+          Cuckmere Valley might be my Sussex Downs highlight
         </h3>
       </div>
       <style jsx>{`
@@ -41,8 +41,7 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
           bottom: -50px;
           left: -200px;
           z-index: 800;
-
-          background-color: #57bbbc;
+          // background-color: #57bbbc;
           overflow: hidden;
           transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1),
             height 2.5s cubic-bezier(0.4, 0, 0.2, 1),
@@ -51,13 +50,16 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          border: 1px solid grey;
+          // border: 1px solid grey;
+          font-size: 12px;
+          background-color: rgba(var(--callout-rgb), 0.5);
+          border: 1px solid rgba(var(--callout-border-rgb), 0.3);
         }
 
         .content {
           padding: 1rem;
           font-size: 0.75rem;
-          color: black;
+          color: white;
           text-align: center;
         }
 

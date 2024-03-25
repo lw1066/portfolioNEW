@@ -42,7 +42,7 @@ const GrowingCryptic = ({ isVisibleCryptic }) => {
           position: absolute;
 
           top: 25px;
-          background-color: #802621;
+          // background-color: #802621;
           overflow: hidden;
           transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1),
             height 2.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -51,12 +51,15 @@ const GrowingCryptic = ({ isVisibleCryptic }) => {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          boorder: 1px solid grey;
+          // border: 1px solid grey;
+          font-size: 12px;
+          background-color: rgba(var(--callout-rgb), 0.5);
+          border: 1px solid rgba(var(--callout-border-rgb), 0.3);
         }
 
         .content {
           padding: 1rem;
-          color: black;
+          color: white;
           font-size: 0.9rem;
           text-align: center;
         }

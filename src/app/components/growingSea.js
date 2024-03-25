@@ -45,7 +45,7 @@ const GrowingSea = ({ isVisibleSea }) => {
           position: absolute;
           right: -40px;
           bottom: 30px;
-          background-color: #c7622b;
+          // background-color: #c7622b;
           overflow: hidden;
           transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1),
             height 2.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,12 +54,15 @@ const GrowingSea = ({ isVisibleSea }) => {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          border: 1px solid grey;
+          // border: 1px solid grey;
+          font-size: 12px;
+          background-color: rgba(var(--callout-rgb), 0.5);
+          border: 1px solid rgba(var(--callout-border-rgb), 0.3);
         }
 
         .content {
           padding: 1rem;
-          color: black;
+          color: white;
           font-size: 0.75rem;
           text-align: center;
         }

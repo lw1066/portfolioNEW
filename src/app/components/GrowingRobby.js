@@ -45,7 +45,7 @@ const GrowingRobby = ({ isVisibleRobby }) => {
           position: absolute;
           left: -250px;
           bottom: -185px;
-          background-color: #b8912e;
+          // background-color: #b8912e;
           overflow: hidden;
           transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1),
             height 2.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,12 +54,15 @@ const GrowingRobby = ({ isVisibleRobby }) => {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          border: 1px solid grey;
+          // border: 1px solid grey;
+          font-size: 12px;
+          background-color: rgba(var(--callout-rgb), 0.5);
+          border: 1px solid rgba(var(--callout-border-rgb), 0.3);
         }
 
         .content {
           padding: 1rem;
-          color: black;
+          color: white;
           font-size: 0.9rem;
           text-align: center;
           font-weight: bold;
