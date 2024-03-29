@@ -177,7 +177,7 @@ export default function Home() {
                 <br />
                 Ana-gram-miser <span>-&gt;</span>
               </h2>
-              <p>React SPA using a dictionary API.</p>
+              <p>React SPA using a dictionary API</p>
             </Link>
 
             <Link href="/" className={styles.card}>
@@ -198,7 +198,7 @@ export default function Home() {
               </h2>
               <p>
                 Mobile first full-stack news/blog app. React front with a
-                node.js/PSQL back.
+                Expressjs/PSQL back
               </p>
             </Link>
 
@@ -208,7 +208,7 @@ export default function Home() {
                 <br />
                 Press <span>-&gt;</span>
               </h2>
-              <p>Serverless Nextjs site using a NoSQL db and Firebase Auth.</p>
+              <p>Serverless Nextjs site using a NoSQL db and Firebase Auth</p>
             </Link>
           </div>
         </div>

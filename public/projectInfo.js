@@ -22,8 +22,9 @@ export const thoughts = {
   info1:
     "A mobile first full-stack site where users can sign-in, read and rate articles",
   info2:
-    "The Express API(PSQL managed database) is hosted on render's free tier so can take a minute to spin up from inactive. The React front-end uses some of React Router v6.4 features to load data before rendering the page. So please be patient!",
+    "The Express API(PSQL managed database) is hosted on Render's free tier so can take a minute to spin up from inactive. The React front-end uses some of React Router v6.4 features to load data before rendering the page. So please be patient!",
   info3:
     "This project was completed over 8 days - some outstanding features include solving the delay on initial render due to API host waking, implementing full-screen web view with grid, pagination and functionality to add articles. ",
   info4: "Take a look then head back by clicking home in the top left.",
 };
+http://localhost:3000/thoughts
