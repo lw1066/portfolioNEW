@@ -14,7 +14,6 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
           transform: translateX(0);
           height: 40px;
           width: 39%;
-          background-color: blue;
           overflow: hidden;
           transition: left 2.5s cubic-bezier(0.4, 0, 0.2, 1);
           z-index: 999;
@@ -22,6 +21,8 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
           align-items: center;
           justify-content: end;
           border-radius: 2px;
+          background-color: rgba(var(--callout-rgb), 0.5);
+          border: 1px solid rgba(var(--callout-border-rgb), 0.3);
         }
 
         .slide-in {

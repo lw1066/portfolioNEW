@@ -31,13 +31,14 @@ const GrowingLine = ({ isVisibleEmail }) => {
           top: -5px;
           left: 10%;
           width: 30px;
-          background-color: yellow;
           display: flex;
           align-items: flex-end;
           justify-content: center;
           transition: height 2.5s cubic-bezier(0.4, 0, 0.2, 1);
           z-index: 1000;
           border-radius: 2px;
+          background-color: rgba(var(--callout-rgb), 0.5);
+          border: 1px solid rgba(var(--callout-border-rgb), 0.3);
         }
 
         .content {
@@ -46,7 +47,7 @@ const GrowingLine = ({ isVisibleEmail }) => {
 
         .text {
           transform: rotate(-90deg); /* Rotate text in opposite direction */
-          color: black;
+          color: white;
           font-size: 16px;
           padding-left: 15px;
         }
