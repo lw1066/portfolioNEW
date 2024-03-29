@@ -32,7 +32,7 @@ const GrowingCuckmere = ({ isVisibleCuckmere }) => {
     <div className="circle" style={{ width: circleSize, height: circleSize }}>
       <div className="content">
         <h3 style={{ display: isVisibleCuckmere ? "block" : "none" }}>
-          Cuckmere Valley might be my Sussex Downs highlight
+          Living in Brighton, Cuckmere Valley might be my Sussex Downs highlight
         </h3>
       </div>
       <style jsx>{`

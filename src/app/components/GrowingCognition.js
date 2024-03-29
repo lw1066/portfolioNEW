@@ -37,8 +37,8 @@ const GrowingCognition = ({ isVisibleCognition }) => {
           className="text"
           style={{ display: isVisibleCognition ? "block" : "none" }}
         >
-          The relation between language, mind and self is fascinating -
-          Cognitive Linguistics explores this
+          The relation between language, mind and self is fascinating - I enjoy
+          exploring it through the perspective of Cognitive Linguistics
         </p>
       </div>
       <style jsx>{`

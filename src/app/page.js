@@ -166,9 +166,8 @@ export default function Home() {
 
         <div ref={projectsRef} id={styles.gridContainer}>
           <h2 id={styles.projectText}>
-            Projects that reflect progress made.
-            <br />
-            Still a long way to go but a good start...
+            Projects reflecting progress made.
+            <br />A long way to go but a good start...
           </h2>
 
           <div className={styles.grid}>
