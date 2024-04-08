@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 
 const GrowingLine = ({ isVisibleEmail }) => {
   const [lineHeight, setLineHeight] = useState(0);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
     if (isVisibleEmail) {
+      setShowText(true);
       const lineHeight = 300;
       setLineHeight(lineHeight);
     } else {
@@ -17,14 +19,11 @@ const GrowingLine = ({ isVisibleEmail }) => {
       className={`line ${isVisibleEmail ? "expand" : ""}`}
       style={{ height: `${lineHeight}px` }}
     >
-      <div className="content">
-        <h3
-          className="text"
-          style={{ display: isVisibleEmail ? "block" : "none" }}
-        >
-          Lewis_webster@hotmail.com
-        </h3>
-      </div>
+      {showText && (
+        <div className="content">
+          <h3 className="text">Lewis_webster@hotmail.com</h3>
+        </div>
+      )}
       <style jsx>{`
         .line {
           position: fixed;
@@ -35,7 +34,7 @@ const GrowingLine = ({ isVisibleEmail }) => {
           align-items: flex-end;
           justify-content: center;
           transition: height 2.5s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 1000;
+          z-index: 999;
           border-radius: 2px;
           background-color: rgba(var(--callout-rgb), 0.5);
           border: 1px solid rgba(var(--callout-border-rgb), 0.3);

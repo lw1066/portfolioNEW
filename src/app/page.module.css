@@ -4,7 +4,18 @@
   justify-content: flex-start;
   align-items: center;
   padding: 1rem;
-  height: 100vh;
+  height: 1000vh;
+  position: relative;
+}
+
+#detailsCard {
+  position: fixed;
+  top: 35%;
+  text-align: center;
+}
+
+#detailsCard h1 {
+  font-size: 50px;
 }
 
 .grid {
@@ -16,13 +27,15 @@
 
 #gridContainer {
   width: 100%;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 400px, auto;
-  top: 1500px;
-  width: 60%;
+  margin: 0 auto;
+  top: 80%;
+  width: 100%;
+  background-color: black;
+  z-index: 1000;
 }
 
 #projectText {
@@ -77,10 +90,6 @@
   border: 1px solid white;
 }
 
-#detailsCard {
-  text-align: center;
-}
-
 #contactImagesContainer {
   display: flex;
   align-items: flex-start;
@@ -98,56 +107,16 @@
   transform: scale(1.1);
 }
 
-#crossWordContainer {
-  position: relative;
-  width: 100%;
-  height: 100px;
-}
-
-#resourcesGrid {
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(7, minmax(14.2%, 14.2%));
-  grid-template-rows: repeat(7, auto);
-  grid-template-areas:
-    ". . . projects . . crypticText"
-    "cuckmere  . . . . . cryptics"
-    "cuckText . sea sea sea . ."
-    ".  . sea sea sea . ."
-    " . . sea sea sea seaText  ."
-    "robby robText . . . cogText cognition";
-
-  justify-items: center;
-  height: 45vh;
-  width: 55vw;
-  margin-top: 10vh;
-}
-
-.cuckText {
-  grid-area: cuckText;
-  position: relative;
-}
-
-.crypticText {
-  grid-area: crypticText;
-}
-
-.seaText {
-  grid-area: seaText;
-  position: relative;
-}
-
-.robText {
-  grid-area: robText;
-  position: relative;
-}
-
-.cogText {
-  grid-area: cogText;
-  position: relative;
+.scrollSeaContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
 }
 
 .projects {
+  z-index: 1000;
   grid-area: projects;
   padding: 0.1vw;
   border-radius: 50%;
@@ -164,59 +133,6 @@
   border: 1px solid white;
   transform: scale(1.5);
   z-index: 1000;
-}
-
-.crossWord {
-  grid-area: cryptics;
-  width: 120px;
-}
-
-#robby {
-  grid-area: robby;
-  width: 120px;
-}
-
-#cognition {
-  grid-area: cognition;
-  width: 120px;
-}
-
-#cuckmere {
-  grid-area: cuckmere;
-  width: 120px;
-}
-
-.sea {
-  border-radius: 50%;
-  box-shadow: 0 0 30px rgba(2, 152, 207, 0.4);
-  grid-area: sea;
-
-  /* width: 100%;
-  height: 100%; */
-}
-
-.crossWord img,
-#robby img,
-#cognition img,
-#cuckmere img,
-.sea img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  aspect-ratio: 1;
-  transition: transform 1s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1.5);
-  box-shadow: 0 0 40px rgba(2, 152, 207, 0.6);
-}
-
-.crossWord:hover img,
-#robby:hover img,
-#cognition:hover img,
-#cuckmere:hover img,
-.projects:hover img,
-.sea:hover img {
-  transform: scale(1.1);
 }
 
 /* Enable hover only on non-touch devices */
@@ -242,39 +158,10 @@
   .grid {
     grid-template-columns: repeat(4fr, minmax(100px, 20%));
   }
-
-  .crossWord,
-  #robby,
-  #cognition,
-  #cuckmere {
-    width: 100px;
-    height: 100px;
-  }
-
-  .sea {
-    width: 140px;
-    height: 140px;
-  }
 }
+
 /* Mobile */
 @media (max-width: 700px) {
-  .circularImageContainer {
-    /* position: relative; */
-  }
-
-  .crossWord,
-  #robby,
-  #cognition,
-  #cuckmere {
-    width: 70px;
-    height: 70px;
-  }
-
-  .sea {
-    width: 110px;
-    height: 110px;
-  }
-
   .content {
     padding: 4rem;
   }
