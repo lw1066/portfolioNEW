@@ -5,9 +5,9 @@ const Crossword = ({ src }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const windowHeight = window.innerHeight;
+      const scrollHeight = document.documentElement.scrollHeight;
       const scrollPosition = window.scrollY;
-      setIsFixed(scrollPosition >= 45 && scrollPosition <= 55);
+      setIsFixed(scrollPosition + window.innerHeight >= scrollHeight / 2);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -17,60 +17,66 @@ const Crossword = ({ src }) => {
   }, []);
 
   return (
-    <div className="card">
+    <div className={`card ${isFixed ? 'fixed' : ''}`}>
       <div className="image-container">
         <img src={src} alt="Crossword" className="image" />
       </div>
       <div className="circle-text">
-        <p>
-          I really enjoy a _?_ crossword!
-          <br />
-          <i>Weep quietly over small parasite(8)</i>
+          <p>I really enjoy the meeting of minds over a collaborative _?_ crossword! <br/><br/><i>Weep quietly over small parasite(8)</i>
         </p>
       </div>
       <style jsx>{`
         .card {
           position: relative;
+          top: 44%;
           display: inline-block;
-          width: 20vw;
-          height: 50vh;
+          width: 100vw;
+          height: 30vh;
           margin: 20px;
           overflow: hidden;
           border-radius: 8px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          background-color: #fff;
+          background-color: black;
           z-index: 1000;
-          top: 40%;
+          transition: top 0.8s ease; 
+        }
+
+        .fixed {
+          position: fixed;
+          top: 36%;
+          transition: none;
         }
 
         .image-container {
-          width: 100%;
+          width: 15%;
           height: 100%;
           overflow: hidden;
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
+          margin-left:10%;
+         
+        
         }
 
         .image {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          z-index:1000;
         }
 
         .circle-text {
           position: absolute;
-          bottom: 5px; /* 5px gap from the bottom */
-          right: 5%; /* Adjust the right position */
+          bottom: 10%; 
+          right: 5%; 
           margin: 5px 0;
-          width: 90%;
-          height: 30%;
+          width: 70%;
+          height: 80%;
           border-radius: 10px;
-          font-size: 14px;
+          font-size: 20px;
+          font-weight:700;
           display: flex;
           align-items: center;
-          text-align: center;
-          background-color: rgba(0, 0, 0, 0.8);
-          border: 2px solid rgba(255, 255, 255, 0.3);
+          justify-content: center;
+          background-color: black;
           color: white;
         }
       `}</style>

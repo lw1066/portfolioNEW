@@ -7,6 +7,9 @@ import GrowingTextBoxEmail from "./components/GrowingEmail";
 import ScrollingSea from "./components/ScrollingSea";
 import Projects from "./components/Projects";
 import Crossword from "./components/Crossword";
+import Cognition from "./components/Cognition";
+import TechSkills from "./components/techSkills";
+import Cuckmere from "./components/Cuckmere";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,8 +62,10 @@ export default function Home() {
       <div className={styles.scrollSeaContainer}>
         <ScrollingSea src={"/seay.webp"} />
       </div>
-
-      <Crossword src={"/cryptics.jpg"} />
+      <TechSkills src={'/robby.jpg'} />
+      <Crossword src={"/cryptics.png"} />
+      <Cognition src={'/cognitive.jpg'} />
+      <Cuckmere src={'/cuckmere.webp'} />
 
       <Projects />
     </main>
