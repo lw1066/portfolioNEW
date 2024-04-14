@@ -19,12 +19,6 @@ export default function Home() {
   const [renderProjects, setRenderProjects] = useState(false);
   const gridContainerRef = useRef(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
-    }
-  }, []);
-
   const handleProjectsLinkClick = () => {
     setShowStaticProjects(!showStaticProjects);
     console.log(showStaticProjects);
