@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const Cuckmere = ({ src }) => {
+const Cuckmere = ({ src, offsetPercentage = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fixedTop, setFixedTop] = useState(0);
-  const [offsetPercentage, setOffsetPercentage] = useState(0); // Initial percentage
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight;
-      const windowHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
+      if (typeof window !== "undefined") {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
 
-      setIsVisible(scrollPosition >= scrollHeight * 0.55);
-      const offsetPixels = (windowHeight * offsetPercentage) / 100;
-      setFixedTop(offsetPixels);
+        setIsVisible(scrollPosition >= scrollHeight * 0.55);
+        const offsetPixels = (windowHeight * offsetPercentage) / 100;
+        setFixedTop(offsetPixels);
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleScroll);
+      }
     };
   }, [offsetPercentage]);
 
