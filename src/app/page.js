@@ -20,7 +20,9 @@ export default function Home() {
   const gridContainerRef = useRef(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const handleProjectsLinkClick = () => {
