@@ -7,7 +7,7 @@ const GrowingLine = ({ isVisibleEmail }) => {
   useEffect(() => {
     if (isVisibleEmail) {
       setShowText(true);
-      const lineHeight = 300;
+      const lineHeight = 500;
       setLineHeight(lineHeight);
     } else {
       setLineHeight(0);
@@ -45,17 +45,16 @@ const GrowingLine = ({ isVisibleEmail }) => {
         }
 
         .text {
-          transform: rotate(-90deg); /* Rotate text in opposite direction */
+          transform: rotate(-90deg);
           color: white;
           font-size: 16px;
           padding-left: 15px;
         }
 
-        // .expand {
-        //   height: 50%;
-        // }
         @media (max-width: 700px) {
-        }
+          .line {
+            z-index: 99;
+          }
 
         @media (min-width: 701px) and (max-width: 1120px) {
         }

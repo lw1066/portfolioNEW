@@ -37,8 +37,6 @@
 html,
 body {
   max-width: 100vw;
-
-
 }
 
 body {
@@ -49,6 +47,14 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  scrollbar-width: none;
 }
 
 button {

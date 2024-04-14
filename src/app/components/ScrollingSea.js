@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const ScrollingSea = ({ src, alt }) => {
   const [scale, setScale] = useState(0.01);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
-  //   const [disableScroll, setDisableScroll] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,26 +15,25 @@ const ScrollingSea = ({ src, alt }) => {
       setScrollPercentage(percentage);
 
       const maxScale = 1; // Maximum scale when fully expanded
-      const minScale = 0.001; // Minimum scale (initially a small circle)
+      const minScale = 0.0001; // Smaller minimum scale for almost invisible image
       const newScale = minScale + (percentage / 12) * (maxScale - minScale);
       setScale(Math.min(Math.max(newScale, minScale), maxScale));
 
       if (percentage >= 12) {
         setIsTextVisible(true);
-        // setDisableScroll(true);
-        setTimeout(() => {
-          // setDisableScroll(false);
-        }, 10000); // Re-enable scrolling after 10 seconds
-      } else if (percentage < 12) {
+      } else {
         setIsTextVisible(false);
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const imageSize = scale * (window.innerWidth < 700 ? 300 : 200);
 
   return (
     <div
@@ -51,8 +49,8 @@ const ScrollingSea = ({ src, alt }) => {
         src={src}
         alt={alt}
         style={{
-          width: `${scale * 200}vw`,
-          height: `${scale * 200}vw`,
+          width: `${imageSize}vw`,
+          height: `${imageSize}vw`,
           borderRadius: "50%",
           transition: "width 3s ease, height 3s ease",
         }}
@@ -80,7 +78,7 @@ const ScrollingSea = ({ src, alt }) => {
           transform: translate(0, -50%);
           z-index: 990;
           text-align: center;
-          color: #222222;
+          color: #11258c;
           font-size: 50px;
           font-weight: bold;
           font-style: italic;
@@ -122,6 +120,23 @@ const ScrollingSea = ({ src, alt }) => {
           }
           to {
             opacity: 1;
+          }
+        }
+        @media (max-width: 700px) {
+          .scroll-in-text {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            right: 0;
+            transform: translate(0, -50%);
+            z-index: 990;
+            text-align: center;
+            color: #11258c;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            padding: 20px;
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
           }
         }
       `}</style>

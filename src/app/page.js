@@ -1,20 +1,39 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import GrowingTextBox from "./components/GrowingPhone";
 import GrowingTextBoxEmail from "./components/GrowingEmail";
 import ScrollingSea from "./components/ScrollingSea";
 import Projects from "./components/Projects";
 import Crossword from "./components/Crossword";
 import Cognition from "./components/Cognition";
-import TechSkills from "./components/techSkills";
+import TechSkills from "./components/TechSkills";
 import Cuckmere from "./components/Cuckmere";
+import Link from "next/link";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleEmail, setIsVisibleEmail] = useState(false);
-  const projectsRef = useRef(null);
+  const [showStaticProjects, setShowStaticProjects] = useState(false);
+  const [renderProjects, setRenderProjects] = useState(false);
+  const gridContainerRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleProjectsLinkClick = () => {
+    setShowStaticProjects(!showStaticProjects);
+    console.log(showStaticProjects);
+    if (!showStaticProjects) {
+      setTimeout(() => {
+        setRenderProjects(true);
+      }, 3000);
+    } else {
+      setRenderProjects(false);
+    }
+  };
 
   return (
     <main className={styles.main}>
@@ -29,12 +48,14 @@ export default function Home() {
             <img
               className={styles.contactImage}
               src="/icons8-email-open-50.png"
+              alt="Email Icon"
             />
           </button>
           <button onClick={() => setIsVisible(!isVisible)}>
             <img
               className={styles.contactImage}
               src="/icons8-ringing-phone-50.png"
+              alt="Phone Icon"
             />
           </button>
           <a
@@ -46,6 +67,7 @@ export default function Home() {
             <img
               className={styles.contactImage}
               src="/icons8-linkedin-50.svg"
+              alt="LinkedIn Icon"
             />
           </a>
           <a
@@ -54,18 +76,74 @@ export default function Home() {
             rel="noopener noreferrer"
             alt="github link"
           >
-            <img className={styles.contactImage} src="/icons8-github-50.png" />
+            <img
+              className={styles.contactImage}
+              src="/icons8-github-50.png"
+              alt="GitHub Icon"
+            />
           </a>
         </div>
+        <div
+          id={`${styles.projectsLinkContainer}`}
+          className={showStaticProjects ? styles.large : ""}
+          onClick={handleProjectsLinkClick}
+        >
+          <p>Projects</p>
+          <div className={styles.scrollArrowHorizontal}></div>
+        </div>
+        <div id={styles.scrollDownContainer}>
+          <p>or</p>
+          <p>Scroll down for a little more about me</p>
+          <div className={styles.scrollArrow}></div>
+        </div>
       </div>
+      {renderProjects && (
+        <div className={`${styles.projectsStatic} ${styles.show}`}>
+          <div className={styles.grid}>
+            <Link href="/anagrammiser" className={styles.card}>
+              <h2 style={{ color: "red" }}>
+                The
+                <br />
+                Ana-gram-miser
+              </h2>
+              <p>React SPA using a dictionary API</p>
+            </Link>
+
+            <Link href="/touchhgrass" className={styles.card}>
+              <h2 style={{ color: "red" }}>Touch Grass</h2>
+              <p>
+                React Native app using AR(Viro) to encourage people to go
+                explore
+              </p>
+            </Link>
+
+            <Link href="/thoughts" className={styles.card}>
+              <h2 style={{ color: "red" }}>The Thoughts of Others</h2>
+              <p>
+                Mobile first full-stack news/blog app. React front with a
+                Expressjs/PSQL back
+              </p>
+            </Link>
+
+            <Link href="/perceptia" className={styles.card}>
+              <h2 style={{ color: "red" }}>
+                Perceptia
+                <br />
+                Press
+              </h2>
+              <p>Serverless Nextjs site using a NoSQL db and Firebase Auth</p>
+            </Link>
+          </div>
+        </div>
+      )}
 
       <div className={styles.scrollSeaContainer}>
         <ScrollingSea src={"/seay.webp"} />
       </div>
-      <TechSkills src={'/robby.jpg'} />
-      <Crossword src={"/cryptics.png"} />
-      <Cognition src={'/cognitive.jpg'} />
-      <Cuckmere src={'/cuckmere.webp'} />
+      <TechSkills src={"/robby.jpg"} />
+      <Crossword src={"/cryptics-removebg-preview.png"} />
+      <Cognition src={"/cognitive.jpg"} />
+      <Cuckmere src={"/cuckmere.webp"} />
 
       <Projects />
     </main>

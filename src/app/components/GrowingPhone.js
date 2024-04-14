@@ -1,15 +1,21 @@
+import React, { useState, useEffect } from "react";
+
 const SlideInTextBox = ({ isVisible, setIsVisible }) => {
+  const [isContentVisible, setIsContentVisible] = useState(isVisible);
+
+  useEffect(() => {
+    setIsContentVisible(isVisible);
+  }, [isVisible]);
+
   return (
     <div className={`textbox ${isVisible ? "slide-in" : ""}`}>
-      <div className="content">
-        <h3 style={{ display: isVisible ? "block" : "none" }}>
-          Call 0750 000 3912
-        </h3>
+      <div className="content" style={{ opacity: isContentVisible ? 1 : 0 }}>
+        <h3>Call 0750 000 3912</h3>
       </div>
       <style jsx>{`
         .textbox {
           position: fixed;
-          top: 150px;
+          top: 32%;
           left: -100%;
           transform: translateX(0);
           height: 40px;
@@ -26,12 +32,13 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
         }
 
         .slide-in {
-          left: 0; /* Slide in from the left */
+          left: 0;
         }
 
         .content {
           padding: 20px;
           font-size: 25px;
+          transition: opacity 5s ease;
         }
 
         @media (min-width: 701px) and (max-width: 1120px) {
@@ -47,8 +54,9 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
 
         @media (max-width: 700px) {
           .textbox {
-            width: 55%;
+            width: 59%;
             height: 25px;
+            top: 15%;
           }
 
           .content {

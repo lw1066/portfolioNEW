@@ -1,12 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
-function Projects() {
+function Projects({ gridContainerRef }) {
   return (
-    <div id={styles.gridContainer}>
-      <h2 id={styles.projectText}>Projects</h2>
+    <div ref={gridContainerRef} id={styles.gridContainer}>
+      <h2 id={styles.projectText}>
+        Projects reflecting progress made.
+        <br />A long way to go but a good start...
+      </h2>
 
       <div className={styles.grid}>
         <Link href="/anagrammiser" className={styles.card}>
@@ -20,16 +23,19 @@ function Projects() {
 
         <Link href="/" className={styles.card}>
           <h2>
-            Touch Grass &nbsp;<span>-&gt;</span>
+            North-coders
+            <br />
+            Final&nbsp;<span>-&gt;</span>
           </h2>
           <p>
-            React Native app using AR(Viro) to encourage people to go explore!
+            <b>Coming Soon!</b>
           </p>
         </Link>
 
         <Link href="/thoughts" className={styles.card}>
           <h2>
-            The Thoughts of Others&nbsp;<span>-&gt;</span>
+            The Thoughts of Others
+            <br /> <span>-&gt;</span>
           </h2>
           <p>
             Mobile first full-stack news/blog app. React front with a

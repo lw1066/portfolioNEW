@@ -4,29 +4,29 @@ import { motion } from "framer-motion";
 const Cuckmere = ({ src }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fixedTop, setFixedTop] = useState(0);
+  const [offsetPercentage, setOffsetPercentage] = useState(0); // Initial percentage
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollHeight = document.documentElement.scrollHeight;
       const windowHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
-      const fixedTopPercentage = 49; // Adjust as needed
-      const offsetPixels = -430; // Adjust as needed
 
-      setIsVisible(scrollPosition >= scrollHeight * 0.65 && scrollPosition <= scrollHeight * 0.80);
-      setFixedTop(windowHeight * (fixedTopPercentage / 100) + offsetPixels);
+      setIsVisible(scrollPosition >= scrollHeight * 0.55);
+      const offsetPixels = (windowHeight * offsetPercentage) / 100;
+      setFixedTop(offsetPixels);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [offsetPercentage]);
 
   return (
     <motion.div
-      initial={{ x: "-100vw" }}
-      animate={{ x: isVisible ? 0 : "-100vw" }}
+      initial={{ x: "100vw" }}
+      animate={{ x: isVisible ? 0 : "100vw" }}
       transition={{ duration: 3 }}
       style={{
         position: "fixed",
@@ -34,7 +34,7 @@ const Cuckmere = ({ src }) => {
         left: 0,
         transform: "translateY(-50%)",
         width: "100vw",
-        height: "32vh", // Adjust height as needed
+        height: "40vh", // Adjust height as needed
         backgroundColor: "#fff",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         zIndex: 1000,
@@ -45,16 +45,14 @@ const Cuckmere = ({ src }) => {
       </div>
       <div className="circle-text">
         <p>
-        The relation between language, mind and self is fascinating - I enjoy
-          exploring it through the perspectives of Cognitive Linguistics
+          Living by the Sussex downs, Cuckmere Haven is my top spot for a wander
         </p>
       </div>
       <style jsx>{`
         .image-container {
           width: 100vw;
-          height: 100vh;
+          height: 40vh;
           overflow: hidden;
-       
         }
 
         .image {
@@ -65,17 +63,36 @@ const Cuckmere = ({ src }) => {
 
         .circle-text {
           position: absolute;
-          bottom: 5%;
-          left: 1%;
-          width: 20%;
+          top: 40%;
+          right: 1%;
+          width: 60%;
           height: 90%;
           padding: 1%;
+          border-radius: 10px;
           font-size: 20px;
-          font-weight:600;
+          font-weight: 700;
           display: flex;
           align-items: center;
+          align-text: center;
           justify-content: center;
-          color: black;
+          color: white;
+        }
+
+        @media (max-width: 700px) {
+          .image-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+          }
+          .circle-text {
+            position: absolute;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            width: 90%;
+            height: 100%;
+            top: 170%;
+          }
         }
       `}</style>
     </motion.div>

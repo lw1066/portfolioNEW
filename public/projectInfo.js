@@ -27,4 +27,12 @@ export const thoughts = {
     "This project was completed over 8 days - some outstanding features include solving the delay on initial render due to API host waking, implementing full-screen web view with grid, pagination and functionality to add articles. ",
   info4: "Take a look then head back by clicking home in the top left.",
 };
-http://localhost:3000/thoughts
+
+export const touchgrass = {
+  title: "Touch Grass",
+  info1: "An app to encourage you to explore your neighborhood",
+  info2:
+    "Built with React Native, Viro Augmented reality, Google Maps, Geoapify API and a Firebase backend.",
+  info3:
+    "This project was a collaboration over 8 days with 4 other students on a Northcoders bootcamp. We used Trello and github to work agilely to complete as much as we could with limited time and resources. ",
+};

@@ -1,42 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const Cognition = ({ src }) => {
+const Techskills = ({ src }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fixedTop, setFixedTop] = useState(0);
-  const [offsetPercentage, setOffsetPercentage] = useState(67);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 700);
+  const [offsetPercentage, setOffsetPercentage] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollHeight = document.documentElement.scrollHeight;
       const windowHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
-      const scroll =
-        windowHeight < 700 ? scrollHeight * 0.45 : scrollHeight * 0.45;
 
-      if (window.innerWidth < 700) {
-        setOffsetPercentage(0);
-      } else {
-        setOffsetPercentage(67);
-      }
-      setIsVisible(scrollPosition >= scroll);
+      setIsVisible(scrollPosition >= scrollHeight * 0.65);
       const offsetPixels = (windowHeight * offsetPercentage) / 100;
       setFixedTop(offsetPixels);
     };
 
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 700);
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    handleScroll(); // Initial setup
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
     };
-  }, [offsetPercentage]); // Re-run effect when offsetPercentage changes
+  }, []);
 
   return (
     <motion.div
@@ -46,72 +31,78 @@ const Cognition = ({ src }) => {
       style={{
         position: "fixed",
         top: `${fixedTop}px`,
-        // left: 0,
+        left: 0,
         transform: "translateY(-50%)",
         width: "100vw",
-        height: isSmallScreen && isVisible ? "100%" : "33vh",
+        height: "32vh", // Adjust height as needed
         backgroundColor: "#fff",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        zIndex: 1000,
+        zIndex: 9000,
       }}
     >
       <div className="image-container">
-        <img src={src} alt="Cognition" className="image" />
+        <img src={src} alt="Robby the robot" className="image" />
       </div>
       <div className="circle-text">
+        <p>2022: Started learning to code</p>
+        <p>2023: 2 days a week online study</p>
+        <p>2024: Bootcamp @Northcoders</p>
+        <br />
         <p>
-          The relationship between language, mind and self is fascinating.
-          Cognitive Linguistics provides exciting perspectives to explore it.
+          My skills are growing. Take a look at some projects (keep scrolling!)
+          for an idea of what I'm doing now
         </p>
+        <br />
+        <p>Or click Home to head back</p>
       </div>
       <style jsx>{`
         .image-container {
+          position: relative;
           width: 100vw;
-          height: 100%; // Adjust height as needed
+          height: 100vh; 
           overflow: hidden;
-        }
+          background-color: #045626;
+          }
 
         .image {
+          position: absolute; 
+          top: 0; 
+          left: 0;
           width: 100%;
-          height: 100%;
+          height: 100%
           object-fit: cover;
+          
         }
 
         .circle-text {
           position: absolute;
-          bottom: 5%;
+          top: 35%;
           left: 1%;
-          width: 20%;
+          width: 30%;
           height: 90%;
           padding: 1%;
-          font-size: 18px;
+          font-size: 20px;
           font-weight: 600;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          // align-items: center;
+          // justify-content: center;
           color: white;
+          display:flex;
+          flex-direction:column;
+          z-index:9999;
         }
+
         @media (max-width: 700px) {
           .circle-text {
             position: absolute;
-            width: 90%;
-            text-align: center;
-            left: 5%;
-          }
-
-          .image-container {
+            top: 180%;
+            left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            background-color: #88ab93;
-          }
-
-          .image {
-            margin-top: 35%;
-            width: 100%;
-            height: 20%;
-            object-fit: cover;
-            top: 85%;
+            margin: 0;
+            padding: 5%;
+            font-size: 18px;         
+            left: 0;
           }
         }
       `}</style>
@@ -119,4 +110,4 @@ const Cognition = ({ src }) => {
   );
 };
 
-export default Cognition;
+export default Techskills;
