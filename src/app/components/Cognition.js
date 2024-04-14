@@ -5,37 +5,44 @@ const Cognition = ({ src }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fixedTop, setFixedTop] = useState(0);
   const [offsetPercentage, setOffsetPercentage] = useState(67);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 700);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight;
-      const windowHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-      const scroll =
-        windowHeight < 700 ? scrollHeight * 0.45 : scrollHeight * 0.45;
+      if (typeof window !== "undefined") {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const scroll =
+          windowHeight < 700 ? scrollHeight * 0.45 : scrollHeight * 0.45;
 
-      if (window.innerWidth < 700) {
-        setOffsetPercentage(0);
-      } else {
-        setOffsetPercentage(67);
+        if (window.innerWidth < 700) {
+          setOffsetPercentage(0);
+        } else {
+          setOffsetPercentage(67);
+        }
+        setIsVisible(scrollPosition >= scroll);
+        const offsetPixels = (windowHeight * offsetPercentage) / 100;
+        setFixedTop(offsetPixels);
       }
-      setIsVisible(scrollPosition >= scroll);
-      const offsetPixels = (windowHeight * offsetPercentage) / 100;
-      setFixedTop(offsetPixels);
     };
 
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 700);
+      if (typeof window !== "undefined") {
+        setIsSmallScreen(window.innerWidth < 700);
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    handleScroll(); // Initial setup
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleResize);
+      handleScroll(); // Initial setup
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, [offsetPercentage]); // Re-run effect when offsetPercentage changes
 
   return (
@@ -46,7 +53,6 @@ const Cognition = ({ src }) => {
       style={{
         position: "fixed",
         top: `${fixedTop}px`,
-        // left: 0,
         transform: "translateY(-50%)",
         width: "100vw",
         height: isSmallScreen && isVisible ? "100%" : "33vh",
@@ -67,7 +73,7 @@ const Cognition = ({ src }) => {
       <style jsx>{`
         .image-container {
           width: 100vw;
-          height: 100%; // Adjust height as needed
+          height: 100%;
           overflow: hidden;
         }
 
@@ -91,6 +97,7 @@ const Cognition = ({ src }) => {
           justify-content: center;
           color: white;
         }
+
         @media (max-width: 700px) {
           .circle-text {
             position: absolute;

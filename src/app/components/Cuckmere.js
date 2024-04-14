@@ -20,13 +20,11 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
 
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
-    }
 
-    return () => {
-      if (typeof window !== "undefined") {
+      return () => {
         window.removeEventListener("scroll", handleScroll);
-      }
-    };
+      };
+    }
   }, [offsetPercentage]);
 
   return (

@@ -8,25 +8,25 @@ const Techskills = ({ src }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight;
-      const windowHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
+      if (typeof window !== "undefined") {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
 
-      setIsVisible(scrollPosition >= scrollHeight * 0.65);
-      const offsetPixels = (windowHeight * offsetPercentage) / 100;
-      setFixedTop(offsetPixels);
+        setIsVisible(scrollPosition >= scrollHeight * 0.65);
+        const offsetPixels = (windowHeight * offsetPercentage) / 100;
+        setFixedTop(offsetPixels);
+      }
     };
 
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
-    }
 
-    return () => {
-      if (typeof window !== "undefined") {
+      return () => {
         window.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
+      };
+    }
+  }, [offsetPercentage]);
 
   return (
     <motion.div
@@ -64,19 +64,18 @@ const Techskills = ({ src }) => {
         .image-container {
           position: relative;
           width: 100vw;
-          height: 100vh; 
+          height: 100vh;
           overflow: hidden;
           background-color: #045626;
-          }
+        }
 
         .image {
-          position: absolute; 
-          top: 0; 
+          position: absolute;
+          top: 0;
           left: 0;
           width: 100%;
-          height: 100%
+          height: 100%;
           object-fit: cover;
-          
         }
 
         .circle-text {
@@ -89,12 +88,10 @@ const Techskills = ({ src }) => {
           font-size: 20px;
           font-weight: 600;
           display: flex;
-          // align-items: center;
-          // justify-content: center;
           color: white;
-          display:flex;
-          flex-direction:column;
-          z-index:9999;
+          display: flex;
+          flex-direction: column;
+          z-index: 9999;
         }
 
         @media (max-width: 700px) {
@@ -106,7 +103,7 @@ const Techskills = ({ src }) => {
             height: 100%;
             margin: 0;
             padding: 5%;
-            font-size: 18px;         
+            font-size: 18px;
             left: 0;
           }
         }

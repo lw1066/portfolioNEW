@@ -7,33 +7,40 @@ const ScrollingSea = ({ src, alt }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const scrollHeight = document.documentElement.scrollHeight;
-      const scrollPosition = window.scrollY;
+      if (typeof window !== "undefined") {
+        const windowHeight = window.innerHeight;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const scrollPosition = window.scrollY;
 
-      const percentage = (scrollPosition / (scrollHeight - windowHeight)) * 100;
-      setScrollPercentage(percentage);
+        const percentage =
+          (scrollPosition / (scrollHeight - windowHeight)) * 100;
+        setScrollPercentage(percentage);
 
-      const maxScale = 1; // Maximum scale when fully expanded
-      const minScale = 0.0001; // Smaller minimum scale for almost invisible image
-      const newScale = minScale + (percentage / 12) * (maxScale - minScale);
-      setScale(Math.min(Math.max(newScale, minScale), maxScale));
+        const maxScale = 1; // Maximum scale when fully expanded
+        const minScale = 0.0001; // Smaller minimum scale for almost invisible image
+        const newScale = minScale + (percentage / 12) * (maxScale - minScale);
+        setScale(Math.min(Math.max(newScale, minScale), maxScale));
 
-      if (percentage >= 12) {
-        setIsTextVisible(true);
-      } else {
-        setIsTextVisible(false);
+        if (percentage >= 12) {
+          setIsTextVisible(true);
+        } else {
+          setIsTextVisible(false);
+        }
       }
     };
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
-  const imageSize = scale * (window.innerWidth < 700 ? 300 : 200);
+  const imageSize =
+    scale *
+    (typeof window !== "undefined" && window.innerWidth < 700 ? 300 : 200);
 
   return (
     <div
