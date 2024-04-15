@@ -29,6 +29,7 @@ const SlideInTextBox = ({ isVisible, setIsVisible }) => {
           border-radius: 2px;
           background-color: rgba(var(--callout-rgb), 0.5);
           border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+          color: white;
         }
 
         .slide-in {

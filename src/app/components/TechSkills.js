@@ -42,7 +42,7 @@ const Techskills = ({ src }) => {
         height: "32vh", // Adjust height as needed
         backgroundColor: "#fff",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        zIndex: 9000,
+        zIndex: 9999,
       }}
     >
       <div className="image-container">

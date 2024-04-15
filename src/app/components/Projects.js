@@ -13,24 +13,20 @@ function Projects() {
           <h2>
             The
             <br />
-            Ana-gram-miser <span>-&gt;</span>
+            Ana-gram-miser
           </h2>
           <p>React SPA using a dictionary API</p>
         </Link>
 
-        <Link href="/" className={styles.card}>
-          <h2>
-            Touch Grass &nbsp;<span>-&gt;</span>
-          </h2>
+        <Link href="/touchgrass" className={styles.card}>
+          <h2>Touch Grass</h2>
           <p>
             React Native app using AR(Viro) to encourage people to go explore!
           </p>
         </Link>
 
         <Link href="/thoughts" className={styles.card}>
-          <h2>
-            The Thoughts of Others&nbsp;<span>-&gt;</span>
-          </h2>
+          <h2>The Thoughts of Others</h2>
           <p>
             Mobile first full-stack news/blog app. React front with a
             Expressjs/PSQL back
@@ -41,7 +37,7 @@ function Projects() {
           <h2>
             Perceptia
             <br />
-            Press <span>-&gt;</span>
+            Press
           </h2>
           <p>Serverless Nextjs site using a NoSQL db and Firebase Auth</p>
         </Link>

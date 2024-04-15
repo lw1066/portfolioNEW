@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 const Cuckmere = ({ src, offsetPercentage = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fixedTop, setFixedTop] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +19,19 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
       }
     };
 
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsSmallScreen(window.innerWidth < 700);
+      }
+    };
+
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleResize);
 
       return () => {
         window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleResize);
       };
     }
   }, [offsetPercentage]);
@@ -38,14 +47,14 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
         left: 0,
         transform: "translateY(-50%)",
         width: "100vw",
-        height: "40vh", // Adjust height as needed
+        height: "40vh",
         backgroundColor: "#fff",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        zIndex: 1000,
+        zIndex: isSmallScreen ? "1000" : "999",
       }}
     >
       <div className="image-container">
-        <img src={src} alt="Cognition" className="image" />
+        <img src={src} alt="Cuckmere haven at sunrise" className="image" />
       </div>
       <div className="circle-text">
         <p>
@@ -87,6 +96,7 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
             width: 100vw;
             height: 100vh;
             overflow: hidden;
+            z-index: 9999;
           }
           .circle-text {
             position: absolute;
@@ -96,6 +106,7 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
             width: 90%;
             height: 100%;
             top: 170%;
+            z-index: 9999;
           }
         }
       `}</style>

@@ -27,14 +27,6 @@
   font-size: 50px;
 }
 
-#projectsLinkContainer {
-  text-align: center;
-  width: 40%;
-  margin: 0 auto;
-  display: flex;
-  transition: transform 0.3s ease;
-}
-
 #scrollDownContainer {
   text-align: center;
   width: 40%;
@@ -53,10 +45,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
   color: #fff;
   font-size: 18px;
   transition: font-size 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 #projectsLinkContainer.large {
@@ -88,7 +81,7 @@
   border-width: 0 5px 5px 0;
   transform: translateX(125px) rotate(-45deg) scale(1.5);
   border-color: red;
-  transition: transform 3s ease, border-width 3s ease, border-color 3s ease;
+  transition: transform 2s ease, border-width 2s ease, border-color 2s ease;
 }
 
 #scrollDownContainer:hover .scrollArrow {
@@ -124,7 +117,7 @@
   flex-direction: column;
   margin-left: 75%;
   top: 91%;
-  z-index: 9000;
+  z-index: 10000;
   color: white;
   border-radius: 10px;
   height: 70vh;
@@ -148,15 +141,19 @@
 
 .card h2 {
   font-weight: 600;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0rem;
 }
 
 .card p {
   margin: 0;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.25;
   max-width: 30ch;
   text-wrap: balance;
+}
+
+.card:hover h2 {
+  transform: scale(1.05);
 }
 
 .topLeft {
@@ -170,10 +167,10 @@
   color: white;
   text-align: center;
   text-justify: center;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 50%;
-  z-index: 9999;
+  z-index: 10001;
 }
 
 .topLeft:hover {
@@ -208,16 +205,15 @@
 .projectsStatic {
   position: fixed;
   right: 5%;
-  top: 15%;
+  top: 10%;
   width: 25%;
   color: white;
-  opacity: 0;
-  transition: opacity 5s ease;
 }
 
-.show {
-  opacity: 1;
+.projectsStatic h2 {
+  color: red;
 }
+
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
@@ -245,9 +241,22 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(4fr, minmax(100px, 20%));
+@media (min-width: 701px) and (max-width: 1024px) {
+  .projectsStatic {
+    right: 1%;
+    top: 5%;
+  }
+
+  .card {
+    padding: 0.25rem 0.25rem;
+  }
+
+  .card h2 {
+    margin-bottom: 0.1rem;
+  }
+
+  #projectsLinkContainer.large .scrollArrowHorizontal {
+    transform: translateX(100px) rotate(-45deg) scale(1.5);
   }
 }
 
@@ -264,7 +273,7 @@
     flex-direction: column;
     margin-left: 0;
     top: 91%;
-    z-index: 9000;
+    z-index: 10000;
     color: white;
     border-radius: 10px;
     height: 800px;
@@ -298,17 +307,16 @@
   #projectsLinkContainer.large {
     position: fixed;
     top: 4.5%;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 3%;
   }
+
   .projectsStatic {
     position: fixed;
-    right: 0;
-    top: 10%;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: black;
-    color: white;
   }
 }

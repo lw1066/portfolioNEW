@@ -14,7 +14,7 @@ const Cognition = ({ src }) => {
         const windowHeight = window.innerHeight;
         const scrollPosition = window.scrollY;
         const scroll =
-          windowHeight < 700 ? scrollHeight * 0.45 : scrollHeight * 0.45;
+          window.innerWidth < 700 ? scrollHeight * 0.44 : scrollHeight * 0.45;
 
         if (window.innerWidth < 700) {
           setOffsetPercentage(0);
@@ -36,14 +36,14 @@ const Cognition = ({ src }) => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
       window.addEventListener("resize", handleResize);
-      handleScroll(); // Initial setup
+      handleScroll();
 
       return () => {
         window.removeEventListener("scroll", handleScroll);
         window.removeEventListener("resize", handleResize);
       };
     }
-  }, [offsetPercentage]); // Re-run effect when offsetPercentage changes
+  }, [offsetPercentage]);
 
   return (
     <motion.div
@@ -55,10 +55,10 @@ const Cognition = ({ src }) => {
         top: `${fixedTop}px`,
         transform: "translateY(-50%)",
         width: "100vw",
-        height: isSmallScreen && isVisible ? "100%" : "33vh",
+        height: isSmallScreen ? "100%" : "33vh",
         backgroundColor: "#fff",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        zIndex: 1000,
+        zIndex: isSmallScreen ? "1000" : "999",
       }}
     >
       <div className="image-container">

@@ -31,7 +31,7 @@ export default function Home() {
     if (!showStaticProjects) {
       setTimeout(() => {
         setRenderProjects(true);
-      }, 3000);
+      }, 1500);
     } else {
       setRenderProjects(false);
     }
@@ -100,10 +100,10 @@ export default function Home() {
         </div>
       </div>
       {renderProjects && (
-        <div className={`${styles.projectsStatic} ${styles.show}`}>
+        <div className={`${styles.projectsStatic}`}>
           <div className={styles.grid}>
             <Link href="/anagrammiser" className={styles.card}>
-              <h2 style={{ color: "red" }}>
+              <h2>
                 The
                 <br />
                 Ana-gram-miser
@@ -111,8 +111,8 @@ export default function Home() {
               <p>React SPA using a dictionary API</p>
             </Link>
 
-            <Link href="/touchhgrass" className={styles.card}>
-              <h2 style={{ color: "red" }}>Touch Grass</h2>
+            <Link href="/touchgrass" className={styles.card}>
+              <h2>Touch Grass</h2>
               <p>
                 React Native app using AR(Viro) to encourage people to go
                 explore
@@ -120,7 +120,7 @@ export default function Home() {
             </Link>
 
             <Link href="/thoughts" className={styles.card}>
-              <h2 style={{ color: "red" }}>The Thoughts of Others</h2>
+              <h2>The Thoughts of Others</h2>
               <p>
                 Mobile first full-stack news/blog app. React front with a
                 Expressjs/PSQL back
@@ -128,7 +128,7 @@ export default function Home() {
             </Link>
 
             <Link href="/perceptia" className={styles.card}>
-              <h2 style={{ color: "red" }}>
+              <h2>
                 Perceptia
                 <br />
                 Press

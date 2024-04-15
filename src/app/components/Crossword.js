@@ -55,7 +55,6 @@ const Crossword = ({ src }) => {
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           background-color: #11258c;
           z-index: 1000;
-          transition: top 0.8s ease;
         }
 
         .fixed {
@@ -131,7 +130,7 @@ const Crossword = ({ src }) => {
           .fixed {
             position: fixed;
             top: 0%;
-            transition: top 2s ease;
+            transition: top 1s ease;
           }
         }
       `}</style>
