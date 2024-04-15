@@ -11,7 +11,7 @@ const Crossword = ({ src }) => {
         const windowWidth = window.innerWidth;
         const scrollPosition = window.scrollY;
 
-        const threshold = scrollHeight / 2;
+        const threshold = scrollHeight * 0.46;
 
         if (scrollPosition + windowHeight >= threshold) {
           setIsFixed(true);
@@ -130,7 +130,7 @@ const Crossword = ({ src }) => {
           .fixed {
             position: fixed;
             top: 0%;
-            transition: top 1s ease;
+            transition: top 3s ease;
           }
         }
       `}</style>
