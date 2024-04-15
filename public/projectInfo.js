@@ -34,5 +34,5 @@ export const touchgrass = {
   info2:
     "Built with React Native, Viro Augmented reality, Google Maps, Geoapify API and a Firebase backend.",
   info3:
-    "This project was a collaboration over 8 days with 4 other students on a Northcoders bootcamp. We used Trello and github to work agilely to complete as much as we could with limited time and resources. ",
+    "This project was a collaboration over 8 days with 4 other students on a Northcoders bootcamp.",
 };
