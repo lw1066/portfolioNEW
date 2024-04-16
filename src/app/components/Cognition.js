@@ -49,13 +49,13 @@ const Cognition = ({ src }) => {
     <motion.div
       initial={{ x: "-100vw" }}
       animate={{ x: isVisible ? 0 : "-100vw" }}
-      transition={{ duration: 3 }}
+      transition={{ duration: isSmallScreen ? 0.5 : 3 }}
       style={{
         position: "fixed",
         top: `${fixedTop}px`,
         transform: "translateY(-50%)",
         width: "100vw",
-        height: isSmallScreen ? "100%" : "33vh",
+        height: isSmallScreen ? "100vh" : "33vh",
         backgroundColor: "#fff",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         zIndex: isSmallScreen ? "1000" : "999",
@@ -67,7 +67,8 @@ const Cognition = ({ src }) => {
       <div className="circle-text">
         <p>
           The relationship between language, mind and self is fascinating.
-          Cognitive Linguistics provides exciting perspectives to explore it.
+          Cognitive Linguistics provided exciting perspectives to explore it in
+          an Applied Linguistics MA @Sussex Uni.
         </p>
       </div>
       <style jsx>{`

@@ -152,8 +152,8 @@ export default function Home() {
       </div>
       {displayDelay && <TechSkills src={"/robby.jpg"} />}
       {displayDelay && <Crossword src={"/cryptics-removebg-preview.png"} />}
-      <Cognition src={"/cognitive.jpg"} />
-      <Cuckmere src={"/cuckmere.webp"} />
+      {displayDelay && <Cognition src={"/cognitive.jpg"} />}
+      {displayDelay && <Cuckmere src={"/cuckmere.webp"} />}
 
       <Projects />
     </main>

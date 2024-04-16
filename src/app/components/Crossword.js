@@ -11,7 +11,7 @@ const Crossword = ({ src }) => {
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
         const scrollPosition = window.scrollY;
-        const threshold = scrollHeight * 0.465;
+        const threshold = scrollHeight * 0.4;
 
         if (scrollPosition > scrollHeight * 0.1) setIsVisible(true);
 
@@ -45,10 +45,10 @@ const Crossword = ({ src }) => {
       </div>
       <style jsx>{`
         .card {
-          display: ${isFixed ? "block" : "none"};
-          position: relative;
-          top: 45%;
-          display: inline-block;
+          // display: ${isFixed ? "block" : "none"};
+          position: ${isFixed ? "fixed" : "relative"};
+          top: 36%;
+          // display: inline-block;
           width: 100vw;
           height: 30vh;
           margin: 20px;
@@ -59,17 +59,11 @@ const Crossword = ({ src }) => {
           z-index: 1000;
         }
 
-        .fixed {
-          position: fixed;
-          top: 36%;
-          transition: none;
-        }
-
         .image-container {
-          width: 15%;
+          width: 14%;
           height: 100%;
           overflow: hidden;
-          margin-left: 10%;
+          margin-left: 13%;
         }
 
         .image {
@@ -98,16 +92,18 @@ const Crossword = ({ src }) => {
 
         @media (max-width: 700px) {
           .card {
-            display: block;
-
-            height: ${isFixed ? "100%" : "12%"};
+            // display: block;
+            height: 100vh;
             margin: 0;
-            top: 45%;
+            transition: top 0.3s ease;
+            top: ${isFixed ? "0" : "40%"};
+            z-index: 999;
           }
 
           .image-container {
-            width: 100%;
-            height: 48%;
+            width: 80%;
+            height: 50%;
+            margin-top: 5%;
             overflow: hidden;
           }
 
@@ -115,24 +111,17 @@ const Crossword = ({ src }) => {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 1000;
+            z-index: 999;
           }
 
           .circle-text {
             position: absolute;
-
             margin: 0px auto;
             width: 80%;
             height: 40%;
             font-size: 20px;
             font-weight: 600;
             color: white;
-          }
-
-          .fixed {
-            position: fixed;
-            top: 0%;
-            transition: top 3s ease;
           }
         }
       `}</style>

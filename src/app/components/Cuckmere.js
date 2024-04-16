@@ -40,7 +40,7 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
     <motion.div
       initial={{ x: "100vw" }}
       animate={{ x: isVisible ? 0 : "100vw" }}
-      transition={{ duration: 3 }}
+      transition={{ duration: isSmallScreen ? 0.5 : 3 }}
       style={{
         position: "fixed",
         top: `${fixedTop}px`,
@@ -58,7 +58,8 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
       </div>
       <div className="circle-text">
         <p>
-          Living by the Sussex downs, Cuckmere Haven is my top spot for a wander
+          Mexico, Spain and Australia were beautiful places to live but Cuckmere
+          Haven in the South Downs is my top spot for a wander
         </p>
       </div>
       <style jsx>{`

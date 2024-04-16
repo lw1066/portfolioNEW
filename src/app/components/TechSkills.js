@@ -5,6 +5,7 @@ const Techskills = ({ src }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fixedTop, setFixedTop] = useState(0);
   const [offsetPercentage, setOffsetPercentage] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +22,16 @@ const Techskills = ({ src }) => {
       window.addEventListener("scroll", handleScroll);
     }
 
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsSmallScreen(window.innerWidth < 700);
+      }
+    };
+
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleResize);
       }
     };
   }, []);
@@ -32,7 +40,7 @@ const Techskills = ({ src }) => {
     <motion.div
       initial={{ x: "-100vw" }}
       animate={{ x: isVisible ? 0 : "-100vw" }}
-      transition={{ duration: 3 }}
+      transition={{ duration: isSmallScreen ? 0.5 : 3 }}
       style={{
         position: "fixed",
         top: `${fixedTop}px`,
