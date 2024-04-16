@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Modal from "../components/Modal";
 import { touchgrass } from "../../../public/projectInfo";
 import styles from "../page.module.css";
@@ -35,29 +35,29 @@ function ReactAppPage() {
             We use an AR trophy which is collected using the phone camera when
             the user is within 100 meters of it's location. On sign-up the user
             provides a postcode, the Geoapify API then provides places of
-            inerest within a 5km radius. These are stored within firebase and 3
-            locations are randomly chosen for tophies. Google maps displays the
-            3 current collectable trophies and the users location. The user
-            scores 100 points for each trophy collection. Once the current three
-            trophies have been collected three new locations are placed on the
-            map.
+            interest within a 5km radius. These are stored within firebase and 3
+            locations are randomly chosen for trophies. Google maps displays the
+            3 current collectable trophies as grass tufts and the users realtime
+            location as a green smiley. The user scores 100 points for each
+            trophy collection. After the three trophies have been collected
+            three new ones are placed on the map.
           </p>
           <p>
             We plan to move backend functionality into Google cloud functions to
-            secure sensitive data (API keys etc). However, the sprint focused on
-            getting an MVP on it's feet so we have yet to implement this.
-            Unfortunately, this means we can't offer a working demo of the app
-            as that would expose sensitive information. But take a look at the
-            video to see footage of the app in action - please note that for
-            this demo proximity was turned off to demonstrate collecting a
-            trophy. In real use the user location (the green smiley) needs to be
-            within 100 meters to access the camera and collect the trophy. Feel
-            free to check out the code on <a>Github</a>.
+            secure sensitive data (API keys etc). However, we focused on getting
+            an MVP on it's feet so we have yet to implement this. Unfortunately,
+            this means we can't offer a working demo of the app as that would
+            expose sensitive information. But take a look at the video to see it
+            in action - please note that for this demo proximity was turned off
+            to demonstrate collecting a trophy. In real use the user location
+            needs to be within 100 meters to access the camera and collect the
+            trophy. Feel free to check out the code on{" "}
+            <a href="https://github.com/lw1066/touchgrass">Github</a>.
           </p>
           <p>
             This is a work in progress with a long way to go before completion
-            but I feel we have explored a lot of new technology, working
-            practices and managed to complete our MVP.
+            but I enjoyed exploring new technology, working practices and am
+            proud we completed our MVP.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ function ReactAppPage() {
           }
 
           a:hover {
-            transform: scale(1.2);
+            color: red;
           }
 
           .video-container {

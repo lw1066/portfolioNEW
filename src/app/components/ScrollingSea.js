@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const ScrollingSea = ({ src, alt }) => {
-  const [scale, setScale] = useState(0.01);
+  const [scale, setScale] = useState(0.0001);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -21,7 +21,7 @@ const ScrollingSea = ({ src, alt }) => {
         const newScale = minScale + (percentage / 12) * (maxScale - minScale);
         setScale(Math.min(Math.max(newScale, minScale), maxScale));
 
-        if (percentage >= 12) {
+        if (percentage >= 8) {
           setIsTextVisible(true);
         } else {
           setIsTextVisible(false);
@@ -65,7 +65,7 @@ const ScrollingSea = ({ src, alt }) => {
       {isTextVisible && (
         <div
           className="scroll-in-text"
-          style={{ opacity: Math.max(0, 1 - (scrollPercentage - 30) / 10) }}
+          style={{ opacity: Math.max(0, 1 - (scrollPercentage - 35) / 10) }}
         >
           <div className="text-content">
             <span className="line1">Sea swimming is a particular joy</span>

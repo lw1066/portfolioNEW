@@ -21,7 +21,11 @@ const GrowingLine = ({ isVisibleEmail }) => {
     >
       {showText && (
         <div className="content">
-          <h3 className="text">Lewis_webster@hotmail.com</h3>
+          <a href="mailto:Lewis_webster@hotmail.com" className="email-link">
+            <h3 className="text">
+              Lewis_webster@hotmail.com <p>Click to Email</p>
+            </h3>
+          </a>
         </div>
       )}
       <style jsx>{`
@@ -38,6 +42,16 @@ const GrowingLine = ({ isVisibleEmail }) => {
           border-radius: 2px;
           background-color: rgba(var(--callout-rgb), 0.5);
           border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+        }
+
+        h3:hover,
+        p:hover {
+          color:red;
+        }
+
+        p{
+          font-size: 7px;
+          text-align: center;
         }
 
         .content {

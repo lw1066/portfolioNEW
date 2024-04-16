@@ -12,18 +12,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import styles from "./Modal.module.css";
 
-// const theme = createTheme({
-//   palette: {
-//     primary: {
-//       main: "black", // Change this to your desired primary color
-//     },
-//     secondary: {
-//       main: "white", // Change this to your desired secondary color
-//     },
-//     // Add more color options as needed
-//   },
-// });
-
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
@@ -43,7 +31,6 @@ export default function Modal({ title, info1, info2, info3, info4 }) {
   };
 
   return (
-    // <ThemeProvider theme={theme}>
     <React.Fragment>
       <BootstrapDialog
         onClose={handleClose}
@@ -73,6 +60,5 @@ export default function Modal({ title, info1, info2, info3, info4 }) {
         </DialogContent>
       </BootstrapDialog>
     </React.Fragment>
-    // </ThemeProvider>
   );
 }

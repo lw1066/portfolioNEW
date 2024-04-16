@@ -17,12 +17,20 @@ export default function Home() {
   const [isVisibleEmail, setIsVisibleEmail] = useState(false);
   const [showStaticProjects, setShowStaticProjects] = useState(false);
   const [renderProjects, setRenderProjects] = useState(false);
+  const [displayDelay, setDisplayDelay] = useState(false);
   const gridContainerRef = useRef(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
+    const timeout = setTimeout(() => {
+      setDisplayDelay(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   const handleProjectsLinkClick = () => {
@@ -142,8 +150,8 @@ export default function Home() {
       <div className={styles.scrollSeaContainer}>
         <ScrollingSea src={"/seay.webp"} />
       </div>
-      <TechSkills src={"/robby.jpg"} />
-      <Crossword src={"/cryptics-removebg-preview.png"} />
+      {displayDelay && <TechSkills src={"/robby.jpg"} />}
+      {displayDelay && <Crossword src={"/cryptics-removebg-preview.png"} />}
       <Cognition src={"/cognitive.jpg"} />
       <Cuckmere src={"/cuckmere.webp"} />
 

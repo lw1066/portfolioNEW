@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Crossword = ({ src }) => {
   const [isFixed, setIsFixed] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -10,8 +11,9 @@ const Crossword = ({ src }) => {
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
         const scrollPosition = window.scrollY;
+        const threshold = scrollHeight * 0.465;
 
-        const threshold = scrollHeight * 0.46;
+        if (scrollPosition > scrollHeight * 0.1) setIsVisible(true);
 
         if (scrollPosition + windowHeight >= threshold) {
           setIsFixed(true);

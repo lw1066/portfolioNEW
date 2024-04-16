@@ -58,7 +58,17 @@ const Techskills = ({ src }) => {
           for an idea of what I'm doing now
         </p>
         <br />
-        <p>Or click Home to head back</p>
+        <p>
+          If you'd like to know more about my work experience take a look at
+          <a
+            href="https://www.linkedin.com/in/lewis-webster-lw1066/"
+            className="linkedin-link"
+          >
+            {" "}
+            Linkedin
+          </a>{" "}
+          or click Home to head back
+        </p>
       </div>
       <style jsx>{`
         .image-container {
@@ -77,6 +87,16 @@ const Techskills = ({ src }) => {
           height: 100%
           object-fit: cover;
           
+        }
+
+        .linkedin-link {
+          cursor: pointer;
+          color: black;
+          transition: color 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+          color: red;
         }
 
         .circle-text {
