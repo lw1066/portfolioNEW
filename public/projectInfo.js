@@ -32,7 +32,9 @@ export const touchgrass = {
   title: "Touch Grass",
   info1: "An app to encourage you to explore your neighborhood",
   info2:
-    "Built with React Native, Viro Augmented reality, Google Maps, Geoapify API and a Firebase backend.",
+    "Built with React Native, Viro Augmented reality, Google Maps, Geoapify API and a Firebase backend",
   info3:
-    "This project was a collaboration over 8 days with 4 other students on a Northcoders bootcamp. Head back home (top left) whenever you're ready",
+    "This project was a collaboration over 8 days with 4 other students on a Northcoders bootcamp",
+  info4: "Head back home (top left) whenever you're ready",
+};
 };
