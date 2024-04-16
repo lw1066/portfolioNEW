@@ -37,4 +37,3 @@ export const touchgrass = {
     "This project was a collaboration over 8 days with 4 other students on a Northcoders bootcamp",
   info4: "Head back home (top left) whenever you're ready",
 };
-};
