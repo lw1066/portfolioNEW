@@ -71,24 +71,28 @@ const Cognition = ({ src }) => {
           an Applied Linguistics MA @Sussex Uni.
         </p>
       </div>
+
       <style jsx>{`
         .image-container {
           width: 100vw;
           height: 100%;
           overflow: hidden;
+          background-color: #87aa92;
+          display: flex;
+          justify-content: flex-end;
         }
 
         .image {
-          width: 100%;
+          width: 60%;
           height: 100%;
           object-fit: cover;
         }
 
         .circle-text {
           position: absolute;
-          bottom: 5%;
-          left: 1%;
-          width: 20%;
+          top: 5%;
+          left: 1.5%;
+          width: 38%;
           height: 90%;
           padding: 1%;
           font-size: 18px;

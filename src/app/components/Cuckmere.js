@@ -77,18 +77,18 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
 
         .circle-text {
           position: absolute;
-          top: 40%;
+          top: 55%;
           right: 1%;
           width: 60%;
-          height: 90%;
+          // height: 90%;
           padding: 1%;
-          border-radius: 10px;
-          font-size: 20px;
-          font-weight: 700;
-          display: flex;
-          align-items: center;
-          align-text: center;
-          justify-content: center;
+          // border-radius: 10px;
+          font-size: 18px;
+          font-weight: 600;
+          // display: flex;
+          // align-items: center;
+          // align-text: center;
+          // justify-content: center;
           color: white;
         }
 

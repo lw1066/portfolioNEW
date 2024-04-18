@@ -45,15 +45,12 @@ const Crossword = ({ src }) => {
       </div>
       <style jsx>{`
         .card {
-          // display: ${isFixed ? "block" : "none"};
           position: ${isFixed ? "fixed" : "relative"};
           top: 36%;
-          // display: inline-block;
           width: 100vw;
           height: 30vh;
           margin: 20px;
           overflow: hidden;
-          border-radius: 8px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           background-color: #11258c;
           z-index: 1000;
@@ -63,7 +60,7 @@ const Crossword = ({ src }) => {
           width: 14%;
           height: 100%;
           overflow: hidden;
-          margin-left: 13%;
+          margin-left: 8%;
         }
 
         .image {
@@ -80,7 +77,7 @@ const Crossword = ({ src }) => {
           margin: 5px 0;
           width: 70%;
           height: 80%;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 600;
           display: flex;
           align-items: center;
