@@ -32,6 +32,8 @@ const Techskills = ({ src }) => {
       if (typeof window !== "undefined") {
         window.removeEventListener("scroll", handleScroll);
         window.addEventListener("resize", handleResize);
+        handleScroll();
+        handleResize();
       }
     };
   }, []);
@@ -114,28 +116,32 @@ const Techskills = ({ src }) => {
           width: 30%;
           height: 90%;
           padding: 1%;
-          font-size: 20px;
-          font-weight: 600;
-          display: flex;
-          // align-items: center;
-          // justify-content: center;
+          font-size: 18px;
+          font-weight: 500;         
           color: white;
-          display:flex;
-          flex-direction:column;
           z-index:9999;
         }
 
         @media (max-width: 700px) {
+          .image-container {
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            }
+
           .circle-text {
             position: absolute;
-            top: 180%;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top:175%;
+          
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+            width: 90%;
+            text-align: center; /* Center text */
+          }
+
+          .circle-text p {
+            font-size: 14px;
             margin: 0;
-            padding: 5%;
-            font-size: 18px;         
-            left: 0;
           }
         }
       `}</style>

@@ -278,6 +278,7 @@
     border-radius: 10px;
     height: 800px;
     background-color: #045626;
+    align-items: center;
   }
 
   .grid {
@@ -314,6 +315,9 @@
 
   .projectsStatic {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     left: 50%;
     transform: translateX(-50%);

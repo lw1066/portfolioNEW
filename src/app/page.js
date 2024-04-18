@@ -35,7 +35,7 @@ export default function Home() {
 
   const handleProjectsLinkClick = () => {
     setShowStaticProjects(!showStaticProjects);
-    console.log(showStaticProjects);
+
     if (!showStaticProjects) {
       setTimeout(() => {
         setRenderProjects(true);

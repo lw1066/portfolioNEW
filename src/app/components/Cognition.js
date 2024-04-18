@@ -37,6 +37,7 @@ const Cognition = ({ src }) => {
       window.addEventListener("scroll", handleScroll);
       window.addEventListener("resize", handleResize);
       handleScroll();
+      handleResize();
 
       return () => {
         window.removeEventListener("scroll", handleScroll);
@@ -109,6 +110,8 @@ const Cognition = ({ src }) => {
             width: 90%;
             text-align: center;
             left: 5%;
+            align-items: flex-end;
+            padding-bottom: 20%;
           }
 
           .image-container {
