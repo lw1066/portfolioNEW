@@ -61,13 +61,7 @@ export default function Home() {
               alt="Email Icon"
             />
           </button>
-          <button onClick={() => setIsVisible(!isVisible)}>
-            <img
-              className={styles.contactImage}
-              src="/icons8-ringing-phone-50.png"
-              alt="Phone Icon"
-            />
-          </button>
+
           <a
             href="https://www.linkedin.com/in/lewis-webster-lw1066/"
             target="_blank"
