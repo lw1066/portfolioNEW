@@ -1,5 +1,5 @@
 const nextConfig = {
-   
-  };
-  
-  module.exports = nextConfig;
+  allowedDevOrigins: ["192.168.1.134"],
+};
+
+module.exports = nextConfig;
