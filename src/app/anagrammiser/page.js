@@ -10,7 +10,7 @@ function ReactAppPage() {
       <Modal title={title} info1={info1} info2={info2} info3={info3} />
       <div>
         <iframe
-          src="https://lw1066.co.uk/"
+          src="https://anagrammiser.netlify.app"
           style={{ width: "100%", height: "100vh", border: "none" }}
         />
       </div>
