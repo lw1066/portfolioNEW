@@ -18,18 +18,16 @@ function Projects() {
           <p>React SPA using a dictionary API</p>
         </Link>
 
-        <Link href="/touchgrass" className={styles.card}>
-          <h2>Touch Grass</h2>
-          <p>
-            React Native app using AR(Viro) to encourage people to go explore!
-          </p>
+        <Link href="/curationCreation" className={styles.card}>
+          <h2>CurationCreation</h2>
+          <p>Nextjs art curation website with firebase DB for database</p>
         </Link>
 
         <Link href="/thoughts" className={styles.card}>
           <h2>The Thoughts of Others</h2>
           <p>
             Mobile first full-stack news/blog app. React front with a
-            Expressjs/PSQL back
+            Express.s/PSQL back
           </p>
         </Link>
 
@@ -40,6 +38,13 @@ function Projects() {
             Press
           </h2>
           <p>Serverless Nextjs site using a NoSQL db and Firebase Auth</p>
+        </Link>
+
+        <Link href="/touchgrass" className={styles.card}>
+          <h2>Touch Grass</h2>
+          <p>
+            React Native app using AR(Viro) to encourage people to go explore!
+          </p>
         </Link>
       </div>
     </div>

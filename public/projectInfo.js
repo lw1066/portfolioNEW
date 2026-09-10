@@ -17,6 +17,16 @@ export const pp = {
   info4: "Head back home (top left) whenever you're ready",
 };
 
+export const curation = {
+  title: "Curation Creation",
+  info1:
+    "An art curation website that allows you to search and visualise the extensive catalogues of the Victoria and Albert museum and a European digital cultural heriatage platform called Europeana",
+  info2:
+    "The art can be viewed and added to a personal exhibition if the user has made an account and signed in",
+  info3: "Built with Next.js, firebase database and authorisation",
+  info4: "Head back home (top left) whenever you're ready",
+};
+
 export const thoughts = {
   title: "The Thoughts of Others",
   info1:

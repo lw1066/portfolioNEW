@@ -113,12 +113,9 @@ export default function Home() {
               <p>React SPA using a dictionary API</p>
             </Link>
 
-            <Link href="/touchgrass" className={styles.card}>
-              <h2>Touch Grass</h2>
-              <p>
-                React Native app using AR(Viro) to encourage people to go
-                explore
-              </p>
+            <Link href="/curationCreation" className={styles.card}>
+              <h2>CurationCreation</h2>
+              <p>Nextjs art curation website with firebase DB for database</p>
             </Link>
 
             <Link href="/thoughts" className={styles.card}>
@@ -136,6 +133,14 @@ export default function Home() {
                 Press
               </h2>
               <p>Serverless Nextjs site using a NoSQL db and Firebase Auth</p>
+            </Link>
+
+            <Link href="/touchgrass" className={styles.card}>
+              <h2>Touch Grass</h2>
+              <p>
+                React Native app using AR(Viro) to encourage people to go
+                explore
+              </p>
             </Link>
           </div>
         </div>
