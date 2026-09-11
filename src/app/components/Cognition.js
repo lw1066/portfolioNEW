@@ -68,8 +68,8 @@ const Cognition = ({ src }) => {
       <div className="circle-text">
         <p>
           The relationship between language, mind and self is fascinating.
-          Cognitive Linguistics provided exciting perspectives to explore it in
-          an Applied Linguistics MA @Sussex Uni.
+          Cognitive Linguistics (Masters @Sussex) and teaching English to
+          international professionals provided perspectives to explore it
         </p>
       </div>
 
@@ -78,7 +78,7 @@ const Cognition = ({ src }) => {
           width: 100vw;
           height: 100%;
           overflow: hidden;
-          background-color: #87aa92;
+          background: #87aa92;
           display: flex;
           justify-content: flex-end;
         }
@@ -87,6 +87,18 @@ const Cognition = ({ src }) => {
           width: 60%;
           height: 100%;
           object-fit: cover;
+          mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 20%,
+            black 100%
+          );
+          -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 20%,
+            black 100%
+          );
         }
 
         .circle-text {

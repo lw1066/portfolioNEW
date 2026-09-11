@@ -38,7 +38,8 @@ const Crossword = ({ src }) => {
       </div>
       <div className="circle-text">
         <p>
-          I really enjoy a meeting of minds over a collaborative _?_ crossword!
+          Collaboration is the secret sauce in all endeavour. I love a meeting
+          of minds over a _?_ crossword
         </p>
         <br />
         <i>_?_ = Weep quietly over small parasite(8)</i>

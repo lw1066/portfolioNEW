@@ -60,8 +60,9 @@ const Cuckmere = ({ src, offsetPercentage = 0 }) => {
       </div>
       <div className="circle-text">
         <p>
-          Mexico, Spain and Australia were beautiful places to live but Cuckmere
-          Haven in the South Downs is my top spot for a wander
+          Mexico, Spain and Australia were beautiful places to live but Brighton
+          is now home, and the Cuckmere valley is the place I like to wander
+          above all
         </p>
       </div>
       <style jsx>{`
